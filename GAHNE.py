@@ -108,9 +108,9 @@ for data_index in range(len(dataset_arr)):
                 if val_loss[idx] > val_loss[idx+1]:
                     judge_decrease = True
                     break
-            if judge_decrease == False and len(val_loss) >= 20:
+            if judge_decrease == False and len(val_loss) >= 40:
                 break
-            if len(val_loss) >= 20:
+            if len(val_loss) >= 40:
                 val_loss = val_loss[1:]
             print("Validation: epoch=" + str(epoch), "  Test set results:", "cost=", "{:.5f}".format(val_cost0),
             "accuracy=", "{:.5f}".format(val_acc0), "time=", "{:.5f}".format(duration0))
@@ -151,11 +151,8 @@ for data_index in range(len(dataset_arr)):
     num_pool_nodes = int(num_train_nodes * 2 / 3)
     print("num_pool_nodes"+str(num_pool_nodes))
     first_batch = int((int)(num_pool_nodes * 1))
-    batch = 20
     print("total" + str(first_batch))
     # num_pool_nodes = 200
-    maxIter = int((num_pool_nodes - first_batch) / batch) + 1
-    print("maxIter" + str(maxIter))
     results = []
     model_times = []
     select_times = []
