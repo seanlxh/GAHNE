@@ -6,7 +6,6 @@ from GAHNE.ge import utils as ut
 from GAHNE.utils2 import *
 from GAHNE.models import GAHNE
 import random
-from GAHNE.Active_select3 import *
 from GAHNE.rewards import *
 import scipy.sparse as sp
 from sklearn.cluster import DBSCAN
